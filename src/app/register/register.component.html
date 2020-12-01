@@ -1,0 +1,39 @@
+    <div class="container">
+    <form action="regsuccess" method="post">
+        <mat-form-field>
+        <input matInput type="text" placeholder="username" name="username" required='true'>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" name="password">
+        </mat-form-field><br>
+        <mat-form-field>
+            <input matInput type="text" placeholder="email address" name="email"/></mat-form-field><br>
+      
+	     
+	     <input type="text" placeholder="First Name" name="firstname"/><br>
+      <input type="text" placeholder="Last Name" name="lastname"/>
+	     <br><br>
+	      <input type="radio" id="male" name="gender" value="male">
+			<label for="male">Male</label><br>
+		  <input type="radio" id="female" name="gender" value="female">
+			<label for="female">Female</label><br>
+	      <input type="radio" id="other" name="gender" value="other">
+			<label for="other">Other</label><br><br>
+			
+      <label for="hobbies"><b>Hobbies</b></label><br>
+	  <label>Dancing</label>
+	  <input type="checkbox" name="hobbies" value="Dancing">
+	  <label>Music</label>
+      <input type="checkbox" name="hobbies" value="Music">
+      <label>Swimming</label>
+      <input type="checkbox" name="hobbies" value="Swimming">
+       <label>Football</label>
+      <input type="checkbox" name="hobbies" value="Football"><br><br>
+      
+      <input type="tel" placeholder="Mobile number" name="phone"/>
+		
+	   	
+      <br><br><button type="submit">create</button>
+      <p class="message">Already registered? <a routerLink="" routerLinkActive="active">Sign In</a></p>
+    </form>
+  </div>

@@ -1,0 +1,16 @@
+
+<div class="container">
+<h1>Login</h1>
+<p>{{ user | json }}</p>
+
+<form novalidate (ngSubmit)="onSubmit()" >
+    <mat-form-field>
+    <input matInput placeholder="Username" type="text" name="first_name" required='true'>
+    </mat-form-field><br>
+    <mat-form-field>
+    <input matInput placeholder="Password" type="password" name="password">
+    </mat-form-field><br>
+    <button mat-raised-button class="btn" type="submit" name="Login">Login</button>
+</form>
+<Span class="card-container">New User?<a routerLink="/register" routerLinkActive="active">  Register here!</a></Span>
+</div>  
