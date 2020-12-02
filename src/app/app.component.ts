@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sweb';
+  logout(){
+    localStorage.clear(); 
+    location.reload();
+  }
 }

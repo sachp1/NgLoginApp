@@ -1,39 +1,35 @@
     <div class="container">
-    <form action="regsuccess" method="post">
+    <form [formGroup]="regForm" #rform="ngForm" (ngSubmit)="onSubmit()" novalidate>
         <mat-form-field>
-        <input matInput type="text" placeholder="username" name="username" required='true'>
+        <input matInput type="text" formControlName="username" placeholder="username" name="username" required='true'>
       </mat-form-field><br>
       <mat-form-field>
-        <input matInput placeholder="Password" type="password" name="password">
+        <input matInput formControlName="password" placeholder="Password" type="password" name="password">
         </mat-form-field><br>
         <mat-form-field>
-            <input matInput type="text" placeholder="email address" name="email"/></mat-form-field><br>
+            <input matInput type="text" formControlName="email"  placeholder="email address" name="email"/></mat-form-field><br>
       
 	     
-	     <input type="text" placeholder="First Name" name="firstname"/><br>
-      <input type="text" placeholder="Last Name" name="lastname"/>
+	     <input type="text" formControlName="firstname" placeholder="First Name" name="firstname"/><br>
+      <input type="text" formControlName="lastname" placeholder="Last Name" name="lastname"/>
 	     <br><br>
-	      <input type="radio" id="male" name="gender" value="male">
+	      <input type="radio" formControlName="gender" id="male" name="gender" value="male">
 			<label for="male">Male</label><br>
-		  <input type="radio" id="female" name="gender" value="female">
+		  <input type="radio" formControlName="gender" id="female" name="gender" value="female">
 			<label for="female">Female</label><br>
-	      <input type="radio" id="other" name="gender" value="other">
+	      <input type="radio" formControlName="gender" id="other" name="gender" value="other">
 			<label for="other">Other</label><br><br>
 			
       <label for="hobbies"><b>Hobbies</b></label><br>
-	  <label>Dancing</label>
-	  <input type="checkbox" name="hobbies" value="Dancing">
-	  <label>Music</label>
-      <input type="checkbox" name="hobbies" value="Music">
-      <label>Swimming</label>
-      <input type="checkbox" name="hobbies" value="Swimming">
-       <label>Football</label>
-      <input type="checkbox" name="hobbies" value="Football"><br><br>
-      
-      <input type="tel" placeholder="Mobile number" name="phone"/>
+      <div *ngFor="let hob of hobbiesData">
+        <input type="checkbox" (change)="onChange(hob.name, $event.target.checked)">
+        {{hob.name}}
+      </div>
+
+      <!-- <input type="tel"  placeholder="Mobile number" name="phone"/> -->
 		
 	   	
-      <br><br><button type="submit">create</button>
+      <br><br><button type="submit" [disabled]="!regForm.valid">create</button>
       <p class="message">Already registered? <a routerLink="" routerLinkActive="active">Sign In</a></p>
     </form>
   </div>
